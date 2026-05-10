@@ -165,7 +165,7 @@ python train_aaln.py \
 If you find our repo useful for your research, please consider citing our paper:
 
 ```bibtex
-@InProceedings{Lu_2025_CVPR,
+@InProceedings{Lu_2025_CVPR_AALN,
     author    = {Lu, Xin and Yang, Jiarong and Bao, Yuanfei and Fan, Zihao and Hu, Anya and Wang, Kunyu and Xiao, Jie and Wang, Xi and Liu, Hongjian and Fu, Xueyang and Zha, Zheng-Jun},
     title     = {Advancing Ambient Lighting Normalization via Diffusion Shadow Generation},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},

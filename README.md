@@ -40,13 +40,14 @@ AALN/
     │   └── losses.py                 # Charbonnier, FFT, SSIM, LPIPS losses
     ├── networks/                     # Model architectures
     │   ├── aaln_arch.py              # Mask-free Shadow Removal U-Net (no global residual)
-    │   ├── diffusion_shadow.py       # DDPM-based shadow mask generator
+    │   ├── diffusion_shadow.py       # VP-SDE score network (NAFNet + AdaLN)
     │   ├── image_utils.py            # Image splitting & merging
     │   └── local_arch.py             # Local inference wrapper
     ├── utils/
     │   └── UTILS.py                  # Metrics & utilities
     ├── TEST.py                       # Inference script
-    └── train_aaln.py                 # Training script with diffusion shadow generation
+    ├── train_aaln.py                 # Training script with diffusion shadow generation
+    └── train_diffusion.py            # Train the VP-SDE shadow mask generator
 ```
 
 
@@ -76,7 +77,33 @@ The restored results will be saved in `./results/`. A log file at `./results/log
 
 Prepare training pairs (degraded / ground-truth images). We use the NTIRE 2025 Ambient Lighting Normalization dataset.
 
-**Step 2: Three-stage Training**
+**Step 2: Train Diffusion Shadow Generator (Optional)**
+
+Pre-train the VP-SDE shadow mask generator from paired shadow/clean images:
+
+```bash
+python train_diffusion.py \
+    --shadow_dir ./data/train_shadow/ \
+    --clean_dir ./data/train_clean/ \
+    --save_path ./ckpt/ \
+    --epochs 500 \
+    --batch_size 16 \
+    --lr 0.0002 \
+    --crop_size 256
+```
+
+Or from pre-computed single-channel mask images:
+
+```bash
+python train_diffusion.py \
+    --mask_dir ./data/shadow_masks/ \
+    --save_path ./ckpt/ \
+    --epochs 500
+```
+
+The trained model is saved as `ckpt/diffusion_shadow.pth`.
+
+**Step 3: Three-stage Shadow Removal Training**
 
 1. **Stage 1** — Train with Charbonnier + FFT loss (Adam, lr=4e-4, batch=12, patch=512, 1000 epochs):
 ```bash

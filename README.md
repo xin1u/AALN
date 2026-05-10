@@ -2,9 +2,9 @@
 
 <a href='https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/papers/Lu_Advancing_Ambient_Lighting_Normalization_via_Diffusion_Shadow_Generation_CVPRW_2025_paper.pdf'><img src='https://img.shields.io/badge/Paper-CVPRW2025-b31b1b.svg'></a> &nbsp;&nbsp;
 
-## :trophy: Runner-Up of the NTIRE 2025 Ambient Lighting Normalization Challenge
+## :trophy: Runner-Up of the CVPR 2025 Ambient Lighting Normalization Challenge
 
-Our team **LightWorker** achieved the **Runner-Up Award** in the [NTIRE 2025 Ambient Lighting Normalization Challenge](https://cvlai.net/ntire/2025/), with **26.50 dB PSNR** and **0.874 SSIM** on the final test set.
+Our team **LightWorker** achieved the **Runner-Up Award** in the [CVPR 2025 Ambient Lighting Normalization Challenge](https://cvlai.net/ntire/2025/), with **26.50 dB PSNR** and **0.874 SSIM** on the final test set.
 
 This is the official PyTorch implementation of the paper:
 
@@ -75,7 +75,7 @@ The restored results will be saved in `./results/`. A log file at `./results/log
 
 **Step 1: Prepare Data**
 
-Prepare training pairs (degraded / ground-truth images). We use the NTIRE 2025 Ambient Lighting Normalization dataset.
+Prepare training pairs (degraded / ground-truth images). We use the CVPR 2025 Ambient Lighting Normalization dataset.
 
 **Step 2: Train Diffusion Shadow Generator (Optional)**
 

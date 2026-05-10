@@ -1,17 +1,4 @@
-"""Diffusion Shadow Generation (Sec.3.1, Figure 2).
 
-NAFNet-based score network with Adaptive LayerNorm (AdaLN) for timestep
-conditioning, trained under the VP-SDE framework. During shadow removal
-training, generated shadow masks are overlaid onto restored images for
-iterative learning.
-
-Diffusion formulation — Variance Preserving SDE (VP-SDE):
-    dx = -0.5 * beta(t) * x dt + sqrt(beta(t)) dw,   t in [0, 1]
-
-The score network s_theta(x_t, t) ≈ ∇_x log p_t(x) is parameterised as
-a NAFNet U-Net whose LayerNorms are replaced by AdaLN conditioned on the
-continuous timestep embedding.
-"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

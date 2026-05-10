@@ -1,23 +1,4 @@
-"""Train the VP-SDE shadow mask generator.
 
-Learns to generate diverse shadow masks from paired (shadow, clean) images
-or pre-computed mask images. The trained score network is then loaded by
-train_aaln.py to dynamically augment the shadow removal training.
-
-Usage:
-    # From paired images (masks extracted on-the-fly):
-    python train_diffusion.py \
-        --shadow_dir ./data/train_shadow/ \
-        --clean_dir ./data/train_clean/ \
-        --save_path ./ckpt/ \
-        --epochs 500
-
-    # From pre-computed single-channel masks:
-    python train_diffusion.py \
-        --mask_dir ./data/shadow_masks/ \
-        --save_path ./ckpt/ \
-        --epochs 500
-"""
 import argparse, os, time, random, logging, sys, copy
 import torch
 import torch.nn.functional as F

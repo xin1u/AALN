@@ -1,6 +1,8 @@
 # AALN: Advancing Ambient Lighting Normalization via Diffusion Shadow Generation
 
 <a href='https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/papers/Lu_Advancing_Ambient_Lighting_Normalization_via_Diffusion_Shadow_Generation_CVPRW_2025_paper.pdf'><img src='https://img.shields.io/badge/Paper-CVPRW2025-b31b1b.svg'></a> &nbsp;&nbsp;
+<a href='https://github.com/xin1u/AALN'><img src='https://img.shields.io/badge/Code-GitHub-181717.svg'></a> &nbsp;&nbsp;
+
 
 ## :trophy: Runner-Up of the CVPR 2025 Ambient Lighting Normalization Challenge
 
